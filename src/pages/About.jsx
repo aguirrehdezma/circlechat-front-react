@@ -1,6 +1,7 @@
 import React from 'react'
 import NavbarNonLogged from "../components/NavbarNonLogged"
 import styles from '../styles/About.module.css';
+import { Link } from 'react-router-dom';
 
 const About = () => {
     return (
@@ -23,11 +24,10 @@ const About = () => {
                     <p className={styles.body}>Ready to dive into the conversation? Sign up today</p>
                     <p className={styles.body}>and discover a world of discussions waiting for you at CircleChat.</p>
                 </section>
-                <button 
-                    className={styles.button}
-                    onClick={() => window.location.href='/signup'}
-                >
-                    Join CircleChat
+                <button className={styles.button}>
+                    <Link to="/signup">
+                        Join CircleChat
+                    </Link>
                 </button>
             </div>
         </div>

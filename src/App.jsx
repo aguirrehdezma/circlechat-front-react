@@ -2,8 +2,7 @@ import React from "react"
 import { 
   BrowserRouter, 
   Routes, 
-  Route, 
-  Navigate 
+  Route
 } from "react-router-dom"
 import Home from "./pages/Home" 
 import SignUp from "./pages/SignUp"
@@ -16,11 +15,6 @@ import Chat from "./pages/Chat"
 import Faq from "./pages/Faq"
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./contexts/AuthContext";
-
-function SignOut () {
-  localStorage.clear();
-  return <Navigate to="/signin"/>
-}
 
 function SignUpAndSignOut () {
   localStorage.clear();
@@ -35,12 +29,11 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/signup" element={<SignUpAndSignOut/>}/>
           <Route path="/signin" element={<SignIn/>}/>
-          <Route path="/signout" element={<SignOut/>}/>
           <Route path="/about" element={<About/>}/>
           <Route element={<ProtectedRoute />}>
             <Route path="/lobby" element={<Lobby/>}/>
             <Route path="/lobby/add_chatroom" element={<AddChatroom/>}/>
-            <Route path="/chat" element={<Chat/>}/>
+            <Route path="/chat/:chatId" element={<Chat/>}/>
             <Route path="/faq" element={<Faq/>}/>
           </Route>
           <Route path="*" element={<NotFound/>}/>

@@ -1,6 +1,7 @@
 import React from 'react';
 import NavbarNonLogged from "../components/NavbarNonLogged"
 import styles from "../styles/Home.module.css"
+import { Link } from 'react-router-dom';
 
 function Home() {
     return (
@@ -21,11 +22,10 @@ function Home() {
                     <p className={styles.body}>
                         social circle and discover like-minded individuals.
                     </p>
-                    <button 
-                        className={styles.button}
-                        onClick={() => window.location.href='/signup'}
-                    >
-                        Create Account
+                    <button className={styles.button}>
+                        <Link to="/signup">
+                            Create Account
+                        </Link>
                     </button>
                 </div>
             </div>

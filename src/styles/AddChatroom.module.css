@@ -45,29 +45,6 @@
     background-color: #324C5C;
 }
 
-.form-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.form-links a {
-    color: #273B47;
-    font-size: 16px;
-}
-
-.form-links p {
-    color: #586065;
-    font-size: 16px;
-}
-
-.centered-link {
-    text-align: center;
-    flex: 1;
-}
-
 @media (min-width: 768px) {
     .container {
         padding: 40px;

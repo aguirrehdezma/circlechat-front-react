@@ -2,6 +2,7 @@ import { useState } from "react";
 import styles from "../styles/NavbarLogged.module.css";
 import api from "../api";
 import { useAuth } from "../contexts/AuthContext";
+import { Link } from 'react-router-dom';
 
 function NavbarLogged() {
     const [isActive, setIsActive] = useState(false);
@@ -32,22 +33,26 @@ function NavbarLogged() {
         <div className="App">
             <header className="App-header">
                 <nav className={`${styles.navbar}`}>
-                    <a href="/lobby" className={`${styles.logo}`}>
+                    <Link to="/lobby" className={`${styles.logo}`}>
                         <img src="circlechat_logo.png" alt="CircleChat Logo"/>
-                    </a>
+                    </Link>
                     <ul
                         className={`${styles.navMenu} ${
                             isActive ? styles.active : ""
                         }`}
                     >
                         <li onClick={removeActive}>
-                            <a href="/lobby" className={`${styles.navLink}`}>
-                                CHATROOMS
+                            <a className={`${styles.navLink}`}>
+                                <Link to="/lobby">
+                                    CHATROOMS
+                                </Link>
                             </a>
                         </li>
                         <li onClick={removeActive}>
-                            <a href="/faq" className={`${styles.navLink}`}>
-                                FAQ
+                            <a className={`${styles.navLink}`}>
+                                <Link to="/faq">
+                                    FAQ
+                                </Link>
                             </a>
                         </li>
                     </ul>

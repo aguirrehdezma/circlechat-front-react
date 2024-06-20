@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/NavbarNonLogged.module.css";
+import { Link } from 'react-router-dom';
 
 function NavbarNonLogged() {
     const [isActive, setIsActive] = useState(false);
@@ -13,22 +14,26 @@ function NavbarNonLogged() {
         <div className="App">
             <header className="App-header">
                 <nav className={`${styles.navbar}`}>
-                    <a href="/" className={`${styles.logo}`}>
+                    <Link to="/" className={`${styles.logo}`}>
                         <img src="circlechat_logo.png" alt="CircleChat Logo"/>
-                    </a>
+                    </Link>
                     <ul
                         className={`${styles.navMenu} ${
                             isActive ? styles.active : ""
                         }`}
                     >
                         <li onClick={removeActive}>
-                            <a href="/about" className={`${styles.navLink}`}>
-                                ABOUT
+                            <a className={`${styles.navLink}`}>
+                                <Link to="/about">
+                                    ABOUT
+                                </Link>
                             </a>
                         </li>
                         <li onClick={removeActive}>
-                            <a href="/signin" className={`${styles.navLink}`}>
-                                SIGN IN
+                            <a className={`${styles.navLink}`}>
+                                <Link to="/signin">
+                                    SIGN IN
+                                </Link>
                             </a>
                         </li>
                     </ul>
