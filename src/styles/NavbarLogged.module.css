@@ -59,6 +59,10 @@ a:hover::before {
     margin-right: auto;
 }
 
+.navSignOut {
+    margin-left: auto; /* Pushes this ul to the far right */
+}
+
 @media screen and (max-width: 780px) {
     .hamburger {
         display: block;
@@ -85,7 +89,7 @@ a:hover::before {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .navMenu {
+    .navMenu, .navSignOut {
         position: absolute;
         flex-direction: column;
         gap: 0;
@@ -98,11 +102,11 @@ a:hover::before {
         padding: 10px;
     }
 
-    .navMenu.active {
+    .navMenu.active, .navSignOut.active {
         left: 0;
     }
 
-    .navMenu li {
+    .navMenu li, .navSignOut li {
         color: #fff;
         margin: 16px 0;
     }
