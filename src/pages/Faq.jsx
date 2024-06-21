@@ -26,7 +26,7 @@ function Faq () {
             </section>
             <button className={styles.button}>
                 <Link to="/lobby">
-                    Start to chat
+                    Start Chatting
                 </Link>
             </button>
         </div>

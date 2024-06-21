@@ -25,7 +25,7 @@ function NavbarLogged() {
                 console.log(JSON.stringify(error));
             });
 
-        api.defaults.headers.common["Authorization"] = "";
+        api.defaults.headers.common['Authorization'] = '';
         removeToken();
     }
 
@@ -42,25 +42,21 @@ function NavbarLogged() {
                         }`}
                     >
                         <li onClick={removeActive}>
-                            <a className={`${styles.navLink}`}>
-                                <Link to="/lobby">
-                                    CHATROOMS
-                                </Link>
-                            </a>
+                            <Link to="/lobby" className={`${styles.navLink}`}>
+                                CHATROOMS
+                            </Link>
                         </li>
                         <li onClick={removeActive}>
-                            <a className={`${styles.navLink}`}>
-                                <Link to="/faq">
-                                    FAQ
-                                </Link>
-                            </a>
+                            <Link to="/faq" className={`${styles.navLink}`}>
+                                FAQ
+                            </Link>
                         </li>
                     </ul>
                     <ul className={`${styles.navSignOut}`}>
                         <li onClick={signOut}>
-                            <a href="#" className={`${styles.navLink}`}>
+                            <Link to="/" className={`${styles.navLink}`}>
                                 SIGN OUT
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                     <div

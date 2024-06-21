@@ -40,27 +40,35 @@ a:hover::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
     min-height: 100px;
     position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
 .logo img {
     width: auto;
     height: 100%;
     max-height: 100px;
+    margin-right: 20px;
 }
 
 .navMenu {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 50px;
-    margin-right: auto;
+    z-index: 1000;
 }
 
 .navSignOut {
-    margin-left: auto; /* Pushes this ul to the far right */
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-left: auto;
+    margin-right: 50px;
 }
 
 @media screen and (max-width: 780px) {
@@ -75,21 +83,22 @@ a:hover::before {
         height: 3px;
         display: block;
         margin: 5px;
-        -webkit-transition: 0.3s ease-in-out;
         transition: 0.3s ease-in-out;
     }
 
     .hamburger.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
 
-    .navMenu, .navSignOut {
+    .navMenu {
         position: absolute;
         flex-direction: column;
         gap: 0;
@@ -102,12 +111,23 @@ a:hover::before {
         padding: 10px;
     }
 
-    .navMenu.active, .navSignOut.active {
+    .navMenu.active {
         left: 0;
     }
 
-    .navMenu li, .navSignOut li {
+    .navMenu li {
         color: #fff;
+        margin: 16px 0;
+    }
+
+    .navSignOut {
+        display: none;
+    }
+
+    .navMenu.active .navSignOut {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         margin: 16px 0;
     }
 }

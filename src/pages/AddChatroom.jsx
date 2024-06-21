@@ -6,6 +6,7 @@ import "../styles/AddChatroom.module.css";
 
 function AddChatroom () {
     const [roomName, setRoomName] = useState("");
+    const [roomDescription, setRoomDescription] = useState("");
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
@@ -15,7 +16,7 @@ function AddChatroom () {
     
         if (roomName.length > 0) {
             api
-                .post('/api/v1/chatrooms/create_chatroom/', { name: roomName })
+                .post('/api/v1/chatrooms/create_chatroom/', { name: roomName, description: roomDescription })
                 .then(response => {
                     console.log(response);
                     navigate('/lobby');
@@ -41,6 +42,13 @@ function AddChatroom () {
                 value={roomName}
                 onChange={(e) => setRoomName(e.target.value)}
                 placeholder="Name"
+            />
+            <input
+                className="form-input"
+                type="text"
+                value={roomDescription}
+                onChange={(e) => setRoomDescription(e.target.value)}
+                placeholder="Description"
             />
             <button className="form-button" type="submit" disabled={loading}>
                 {loading ? "Loading..." : "Create"}

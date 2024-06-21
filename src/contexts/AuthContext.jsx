@@ -11,6 +11,7 @@ const initialState = {
     chatroom: {
         id: null,
         name: "",
+        description: "",
     },
 };
 
@@ -74,6 +75,7 @@ const authReducer = (state, action) => {
                 chatroom: {
                     id: action.payload.id,
                     name: action.payload.name,
+                    description: action.payload.description,
                 },
             };
         default:
